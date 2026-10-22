@@ -33,6 +33,11 @@ jobs:
       - name: Run backend lint
         run: npm run lint
 
+      - name: Run backend tests
+        run: npm test
+        env:
+          MONGODB_TEST_URI: ${{ secrets.MONGODB_TEST_URI }}
+
   frontend:
     name: Frontend lint and build
     runs-on: ubuntu-latest
